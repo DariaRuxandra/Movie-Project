@@ -1,0 +1,153 @@
+@mixin bar {
+    .bar {
+        width: 100%;
+        height: 2px;
+        background-color: $barColor;
+    }
+    
+}
+
+
+.main_content {
+
+    .presentation {
+        display: flex;
+        font-weight: 300;
+        padding-top: 20px;
+        position: relative;
+        // border: 2px solid black;
+
+        .main_poster {
+            // @include flexCenter();
+            width: 244px;
+            height: 375px;
+            padding-left: 36px;
+            // padding-right: 32px;
+        }
+
+        .categories_first {
+            display: flex;
+            flex-direction: column;
+            // justify-content: space-evenly;
+            width: $categoryWidth;
+            margin-left: 90px;
+            z-index: 10;
+
+            .category_title, p {
+                padding-left: 5px;
+                font-size: 15px;
+                cursor: pointer;
+                line-height: $contentLineHeight;
+            }
+
+
+            .category_title {
+                font-weight: 600;
+                font-size: 18px;
+            }
+  
+            .best_sellers {
+                // border: 2px solid blue;
+                @include bar();
+
+                .yellow_title {
+                    color: #F2C94C;
+                }
+ 
+            }
+
+            .drama {
+                @include bar();
+                padding-top: 24px;
+
+                .category_title {
+                    font-weight: 600;
+                }
+            }
+
+            
+        }
+
+        .categories_second {
+            @include bar();
+            @extend .categories_first;
+            margin-left: 40px;
+            width: $categoryWidth;
+            z-index: 10;
+            
+        }
+
+        &::before {
+            content: "";
+            background:  url(../content/city.png);
+            position: absolute;
+            top: 12px;
+            bottom:0;
+            left: 420px;
+            right: 0px; 
+            opacity: 0.6;
+            z-index: 1;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            // transition: 100ms filter linear;
+            box-shadow: inset 100px 150px 140px white;   
+        }
+
+        .snow_piercer {
+            position: relative;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            z-index: 10;
+            cursor: pointer;
+            
+            #piercer{
+                margin: 12px 12px 12px 0px;
+                height: 233px;
+            }
+
+            .yellow_bar {
+                @include flexCenter();
+                position: absolute;
+                // top: 20px;
+                bottom: 30px;
+                left: -30px;
+                background: #F2C94C;
+                gap: 6px;
+                font-style: italic;
+                font-size: 10px;
+                cursor: pointer;
+                z-index: 20;
+                padding: 4px 12px;
+    
+                &:hover {
+                    background: orange;
+                }
+    
+                .arrow {
+                    @include flexCenter();
+                    background: white;
+                    border-radius: 10px;
+      
+                    img {
+                        padding: 3px;
+                    }
+                }
+    
+            }
+            
+        }
+
+        
+    }
+}
+
+
+//.img_wraper {
+    //     mask-image: linear-gradient(to top, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+    //   }
+    // .city {
+    //     background-image: url("IMAGE LOCATION");
+    //   }

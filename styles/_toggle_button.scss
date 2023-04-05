@@ -1,0 +1,120 @@
+
+.hamburger {
+    display: none;
+}
+
+.line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+
+@media only screen and (max-width: 1184px){
+    .hamburger {
+        display: block;
+        padding-left: 10px;
+    }
+
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav_links {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: $headerColor;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+
+        
+
+        &.active{
+            top: 55px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 100;
+            // border: 1px solid red;
+            
+            .nav_item{
+                display: flex;
+                flex-direction: column;
+                
+            }
+            .dropdown-menu {
+                display: flex;
+                flex-direction: column;
+                border: 2px solid red;
+
+            }
+            
+            
+        }
+
+        .nav-item {
+            margin: 16px 0;
+        }
+    }
+    .main-content{
+        z-index: 10;
+    }
+
+}
+
+    
+
+
+// .nav_bar {
+//     position: absolute;
+//     top: 80px;
+//     left: 0;
+//     right: 0;
+//     width: 100vw;
+    
+//     background: $headerColor;
+//     gap: 0;
+
+//     .nav_item {
+//         margin: 16px 0;
+//     }
+
+//     .nav_bar.active {
+//         left: 0;
+        
+//     }
+    
+// }
+
+
+// .nav_links  {
+//     visibility: hidden;
+// }
+
+// .hamburger {
+//     display: block;
+//     cursor: pointer;
+// }
+
+// .hamburger .line {
+//     width: 30px;
+//     height: 3px;
+//     background: #fff;
+//     margin: 6px 0;
+//     -webkit-transition: all 0.3s ease-in-out;
+//     transition: all 0.3s ease-in-out;
+// }  

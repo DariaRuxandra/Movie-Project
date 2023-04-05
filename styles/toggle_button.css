@@ -1,0 +1,28 @@
+.hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 1184px) {
+  .nav_links {
+    visibility: hidden;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin: 6px 0;
+  }
+  header {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    transition: 0.2s;
+    background: lightcoral;
+  }
+}/*# sourceMappingURL=toggle_button.css.map */

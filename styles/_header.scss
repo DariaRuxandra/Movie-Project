@@ -1,0 +1,117 @@
+@mixin transition() {
+    transition: all 0.2s ease 0.07s;
+}
+
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+header {
+    @include flexCenter();
+    height: 56px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: $headerColor;
+    position: relative1;
+    z-index: 200;
+
+    &::before{
+        width: 100vw;
+        height: 56px;
+        content: '';
+        position: absolute;
+        background: $headerColor;
+        z-index: -1;
+        left: 0;
+    }
+    
+    
+    .main-container{
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 173px;
+        max-width: 1160px;
+    }
+
+    nav {
+        .nav_links li{
+            @include transition();
+            display: inline-block;
+            padding: $headerLinksPadding;
+            border-radius: $headerLinksBorderRadius;
+
+            &:hover {
+                background-color: $headerHoverBackgroundColor;
+            }
+
+            li, a {
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                
+            }
+        }
+
+        .dropdown_menu{
+            display: none;
+        }
+
+        .works:hover{
+            position: relative;
+
+            .dropdown_menu{
+                position: absolute;
+                display: block;
+                z-index: 20;
+                border-radius: 105px;
+                left: 0;
+                
+                .gap {
+                    height: 25px;
+                }
+
+
+                ul,li {
+                    background-color:  $headerColor;
+                    width: 276px;
+                    height: 44px;
+                    border-radius: 0;
+                    font-weight: 100;
+
+                    &:hover {
+                        background-color: #000;
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+    .header_logos {
+        @include flexCenter();
+        gap: 15px;
+        
+        .right_side_logo {
+            @include transition();
+            cursor: pointer;
+            padding: $headerLinksPadding;
+            border-radius: $headerLinksBorderRadius;
+
+            &:hover {
+            background-color: $headerHoverBackgroundColor;
+            }
+        }
+    }
+
+}
+
